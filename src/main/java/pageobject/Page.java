@@ -15,12 +15,4 @@ public abstract class Page {
         PageFactory.initElements(driver, this);
     }
 
-    protected static ExpectedCondition<Boolean> jQueryAJAXCompleted(){
-        return new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver){
-                return (Boolean) ((JavascriptExecutor)
-                        driver).executeScript("return (window.jQuery != null) && (jQuery.active == 0);");
-            }
-        };
-    }
 }
