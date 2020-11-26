@@ -8,18 +8,14 @@ import pageobject.Page;
 
 public class SalomonSearchResult extends Page {
 
-@FindBy(xpath = "//button[@class='header__button mod-no-lg js-search']")
-WebElement searchButton;
+    @FindBy(xpath = "//button[@class='header__button mod-no-lg js-search']")
+    WebElement searchButton;
 
-@FindBy(xpath = "//*[@id='header-search']")
-WebElement searchField;
-
-
+    @FindBy(xpath = "//*[@id='header-search']")
+    WebElement searchField;
 
     @FindBy(xpath = "(//h3[1][@class='product-card__title'])[1]")
     WebElement firstSearchResult;
-
-
 
     private static final String HOMEPAGE_URL = "https://salomon.ru/";
     public SalomonSearchResult(WebDriver driver){
@@ -48,12 +44,10 @@ WebElement searchField;
                 .until(ExpectedConditions.elementToBeClickable(searchField))
                 .sendKeys( itemName + Keys.ENTER);
 
-
         return new SalomonSearchResult(driver);
     }
 
     public String getTitleOfFirstSearchResult() {
-
        String firstSearchResultTitle = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.elementToBeClickable(firstSearchResult))
                 .getText();
