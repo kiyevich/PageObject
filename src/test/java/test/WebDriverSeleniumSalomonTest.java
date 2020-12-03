@@ -47,8 +47,8 @@ public class WebDriverSeleniumSalomonTest {
                 .goToCard();
 
         softAssert.assertEquals(new SalomonCardAdding(driver).getCardItemTitle(), "OUTBLAST TS CSWP");
-        softAssert.assertEquals(new SalomonCardAdding(driver).getCardItemSize(), "Размер : 7 uk");
-        softAssert.assertEquals(new SalomonCardAdding(driver).getCardItemPrice(), "8 390 ₽");
+        softAssert.assertEquals(new SalomonCardAdding(driver).getCardItemSize(), "Размер : 9 uk");
+        softAssert.assertEquals(new SalomonCardAdding(driver).getCardItemPrice(), "11 990 ₽");
         softAssert.assertAll();
     }
 
