@@ -24,7 +24,8 @@ public class WebDriverSeleniumSalomonTest {
         System.setProperty("webdriver.chrome.driver", "D://WebDriver/drivers/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-        driver = new ChromeDriver();
+        chromeOptions.addArguments("--lang=ru");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
